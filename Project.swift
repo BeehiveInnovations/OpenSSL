@@ -14,7 +14,7 @@ let project = Project(
             product: .framework,
             productName: "OpenSSL",
             bundleId: "com.github.krzyzanowskim.OpenSSL",
-            deploymentTargets: .iOS("12.0"),
+            deploymentTargets: .iOS("15.0"),
             infoPlist: .file(path: .relativeToRoot("support/iphoneos/Info.plist")),
             sources: [],
             resources: [
@@ -59,7 +59,7 @@ let project = Project(
             product: .framework,
             productName: "OpenSSL",
             bundleId: "com.github.krzyzanowskim.OpenSSL",
-            deploymentTargets: .iOS("12.0"),
+            deploymentTargets: .iOS("15.0"),
             infoPlist: .file(path: .relativeToRoot("support/iphonesimulator/Info.plist")),
             sources: [],
             resources: [
@@ -104,7 +104,7 @@ let project = Project(
             product: .framework,
             productName: "OpenSSL",
             bundleId: "com.github.krzyzanowskim.OpenSSL",
-            deploymentTargets: .macOS("10.15"),
+            deploymentTargets: .macOS("12.0"),
             infoPlist: .file(path: .relativeToRoot("support/macos/Info.plist")),
             sources: [],
             resources: [
@@ -147,7 +147,7 @@ let project = Project(
             product: .framework,
             productName: "OpenSSL",
             bundleId: "com.github.krzyzanowskim.OpenSSL",
-            deploymentTargets: .iOS("12.0"),
+            deploymentTargets: .iOS("15.0"),
             infoPlist: .file(path: .relativeToRoot("support/macos_catalyst/Info.plist")),
             sources: [],
             resources: [
@@ -281,7 +281,7 @@ let project = Project(
             product: .framework,
             productName: "OpenSSL",
             bundleId: "com.github.krzyzanowskim.OpenSSL",
-            deploymentTargets: .tvOS("12.0"),
+            deploymentTargets: .tvOS("15.0"),
             infoPlist: .file(path: .relativeToRoot("support/appletvos/Info.plist")),
             sources: [],
             resources: [
@@ -326,7 +326,7 @@ let project = Project(
             product: .framework,
             productName: "OpenSSL",
             bundleId: "com.github.krzyzanowskim.OpenSSL",
-            deploymentTargets: .tvOS("12.0"),
+            deploymentTargets: .tvOS("15.0"),
             infoPlist: .file(path: .relativeToRoot("support/appletvsimulator/Info.plist")),
             sources: [],
             resources: [
@@ -371,7 +371,7 @@ let project = Project(
             product: .framework,
             productName: "OpenSSL",
             bundleId: "com.github.krzyzanowskim.OpenSSL",
-            deploymentTargets: .watchOS("8.0"),
+            deploymentTargets: .watchOS("9.0"),
             infoPlist: .file(path: .relativeToRoot("support/watchos/Info.plist")),
             sources: [],
             resources: [
@@ -416,7 +416,7 @@ let project = Project(
             product: .framework,
             productName: "OpenSSL",
             bundleId: "com.github.krzyzanowskim.OpenSSL",
-            deploymentTargets: .watchOS("8.0"),
+            deploymentTargets: .watchOS("9.0"),
             infoPlist: .file(path: .relativeToRoot("support/watchsimulator/Info.plist")),
             sources: [],
             resources: [

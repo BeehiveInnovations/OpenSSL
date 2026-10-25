@@ -168,8 +168,11 @@ build()
    rm -rf "${SRC_DIR}"
 }
 
+# Keep temporary compilation files under the caller's TMPDIR. A failed directory
+# allocation must stop the build before any paths are constructed from it.
 build_ios() {
-   local TMP_BUILD_DIR=$( mktemp -d )
+   local TMP_BUILD_DIR
+   TMP_BUILD_DIR=$(mktemp -d "${TMPDIR:-/tmp}/openssl.XXXXXX")
 
    # Clean up whatever was left from our previous build
    rm -rf "${SCRIPT_DIR}"/../{iphonesimulator/include,iphonesimulator/lib}
@@ -224,7 +227,8 @@ build_ios() {
 }
 
 build_visionos() {
-   local TMP_BUILD_DIR=$( mktemp -d )
+   local TMP_BUILD_DIR
+   TMP_BUILD_DIR=$(mktemp -d "${TMPDIR:-/tmp}/openssl.XXXXXX")
 
    # Clean up whatever was left from our previous build
    rm -rf "${SCRIPT_DIR}"/../{visionsimulator/include,visionsimulator/lib}
@@ -279,7 +283,8 @@ build_visionos() {
 }
 
 build_appletvos() {
-   local TMP_BUILD_DIR=$( mktemp -d )
+   local TMP_BUILD_DIR
+   TMP_BUILD_DIR=$(mktemp -d "${TMPDIR:-/tmp}/openssl.XXXXXX")
 
    # Clean up whatever was left from our previous build
    rm -rf "${SCRIPT_DIR}"/../{appletvsimulator/include,appletvsimulator/lib}
@@ -334,7 +339,8 @@ build_appletvos() {
 }
 
 build_watchos() {
-   local TMP_BUILD_DIR=$( mktemp -d )
+   local TMP_BUILD_DIR
+   TMP_BUILD_DIR=$(mktemp -d "${TMPDIR:-/tmp}/openssl.XXXXXX")
 
    # Clean up whatever was left from our previous build
    rm -rf "${SCRIPT_DIR}"/../{watchsimulator/include,watchsimulator/lib}
@@ -348,9 +354,9 @@ build_watchos() {
    rm -rf "${SCRIPT_DIR}"/../{watchos/include,watchos/lib}
    mkdir -p "${SCRIPT_DIR}"/../{watchos/include,watchos/lib}
 
+   # watchOS 9 and later use arm64 or arm64_32; the SDK no longer supports armv7k.
    build "arm64" "watchOS" ${TMP_BUILD_DIR} "watchos"
    build "arm64_32" "watchOS" ${TMP_BUILD_DIR} "watchos"
-   build "armv7k" "watchOS" ${TMP_BUILD_DIR} "watchos"
 
    # Copy headers
    ditto "${TMP_BUILD_DIR}/${OPENSSL_VERSION}-watchOS-arm64/include/openssl" "${SCRIPT_DIR}/../watchos/include/${FWNAME}"
@@ -386,7 +392,8 @@ build_watchos() {
 }
 
 build_macos() {
-   local TMP_BUILD_DIR=$( mktemp -d )
+   local TMP_BUILD_DIR
+   TMP_BUILD_DIR=$(mktemp -d "${TMPDIR:-/tmp}/openssl.XXXXXX")
 
    # Clean up whatever was left from our previous build
    rm -rf "${SCRIPT_DIR}"/../{macosx/include,macosx/lib}
@@ -422,7 +429,8 @@ build_macos() {
 }
 
 build_catalyst() {
-   local TMP_BUILD_DIR=$( mktemp -d )
+   local TMP_BUILD_DIR
+   TMP_BUILD_DIR=$(mktemp -d "${TMPDIR:-/tmp}/openssl.XXXXXX")
 
    # Clean up whatever was left from our previous build
    rm -rf "${SCRIPT_DIR}"/../{macosx_catalyst/include,macosx_catalyst/lib}

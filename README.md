@@ -32,6 +32,8 @@ The financial sustainability of the project is possible thanks to the ongoing co
 You don't have to use the pre-built binaries I provide.
 You can build it locally on your trusted machine.
 
+Use Xcode 27.1 for these builds. The libraries target iOS 15, macOS 12, tvOS 15, and watchOS 9 or later. The watchOS build includes arm64 and arm64_32.
+
 ```
 $ git clone https://github.com/krzyzanowskim/OpenSSL.git
 $ cd OpenSSL

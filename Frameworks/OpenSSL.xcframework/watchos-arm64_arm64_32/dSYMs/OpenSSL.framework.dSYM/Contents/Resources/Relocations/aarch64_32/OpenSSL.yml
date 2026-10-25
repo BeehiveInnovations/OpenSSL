@@ -1,0 +1,7 @@
+---
+triple:          'arm64_32-apple-darwin'
+binary-path:     '/tmp/CodexAgents/2Do/codex-xcode271-deps-20261025-091005-5bfaaf1c/Build/Products/DependencyFrameworks/OpenSSL/watchos/OpenSSL.framework/OpenSSL'
+relocations:
+  - { offset: 0x33, size: 0x4, addend: 0x0, symName: _OpenSSLVersionString, symObjAddr: 0x0, symBinAddr: 0x2CDFE0, symSize: 0x0 }
+  - { offset: 0x63, size: 0x4, addend: 0x0, symName: _OpenSSLVersionNumber, symObjAddr: 0x30, symBinAddr: 0x2CE010, symSize: 0x0 }
+...
